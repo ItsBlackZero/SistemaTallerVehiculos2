@@ -39,6 +39,9 @@
             txtDireccion = new TextBox();
             label5 = new Label();
             button1 = new Button();
+            lblIngresoCliente = new Label();
+            dgvIngresoCliente = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvIngresoCliente).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -79,6 +82,7 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(100, 23);
             txtCedula.TabIndex = 5;
+            txtCedula.KeyDown += txtCedula_KeyDown;
             // 
             // label3
             // 
@@ -95,6 +99,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(100, 23);
             txtTelefono.TabIndex = 7;
+            txtTelefono.KeyDown += txtTelefono_KeyDown;
             // 
             // label4
             // 
@@ -127,14 +132,35 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 10;
-            button1.Text = "button1";
+            button1.Text = "Aceptar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // lblIngresoCliente
+            // 
+            lblIngresoCliente.AutoSize = true;
+            lblIngresoCliente.Location = new Point(244, 43);
+            lblIngresoCliente.Name = "lblIngresoCliente";
+            lblIngresoCliente.Size = new Size(91, 15);
+            lblIngresoCliente.TabIndex = 11;
+            lblIngresoCliente.Text = "Ingreso Clientes";
+            // 
+            // dgvIngresoCliente
+            // 
+            dgvIngresoCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIngresoCliente.Location = new Point(313, 106);
+            dgvIngresoCliente.Name = "dgvIngresoCliente";
+            dgvIngresoCliente.RowTemplate.Height = 25;
+            dgvIngresoCliente.Size = new Size(443, 304);
+            dgvIngresoCliente.TabIndex = 12;
             // 
             // frmIngresoCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dgvIngresoCliente);
+            Controls.Add(lblIngresoCliente);
             Controls.Add(button1);
             Controls.Add(txtDireccion);
             Controls.Add(label5);
@@ -148,6 +174,7 @@
             Controls.Add(label1);
             Name = "frmIngresoCliente";
             Text = "frmIngresoCliente";
+            ((System.ComponentModel.ISupportInitialize)dgvIngresoCliente).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,5 +192,7 @@
         private TextBox txtDireccion;
         private Label label5;
         private Button button1;
+        private Label lblIngresoCliente;
+        private DataGridView dgvIngresoCliente;
     }
 }

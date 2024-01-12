@@ -117,6 +117,31 @@ namespace CapaDatos.SqlExecute
                 return false;
         }
 
+        public DataTable ExecuteSpQuery(string nombre_sp, List<CD_ParameterSP> lista_paramteros)
+        {
+
+            var comando = new SqlCommand();
+            comando.Connection = conn.AbrirConexion(); //asigno conexion
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombre_sp;
+            if (lista_paramteros.Count > 0)
+            {
+                foreach (var parametro in lista_paramteros)
+                    comando.Parameters.Add(parametro.NombreParametro, parametro.TipoDato).Value = parametro.ValorParametro;
+            }
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            using (var tabla = new DataTable())
+            {
+                tabla.Load(reader);
+                reader.DisposeAsync();
+                conn.CerrarConexion();
+                return tabla;
+            }
+
+        }
+
 
     }
 }

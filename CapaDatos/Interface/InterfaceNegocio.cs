@@ -38,10 +38,22 @@ namespace CapaDatos.Interface
         {
             try
             {
-                return obj_db.ExecuteSpNonQuery("SP_CREAR_USUARIO",lista);
+                return obj_db.ExecuteSpNonQuery("SP_INSERTAR_CLIENTE",lista);
             }catch (Exception ex)
             {
                 throw new Exception("ERROR AL CREAR USUARIO"+ ex.Message);
+            }
+        }
+
+        public DataTable getListaCliente()
+        {
+            try
+            {
+                List<CD_ParameterSP> lista = new List<CD_ParameterSP>();
+                return obj_db.ExecuteSpQuery("SP_GET_CLIENTES", lista);
+            }catch (Exception ex)
+            {
+                throw new Exception("Error al obtener clientes"+ ex.Message);
             }
         }
     }
