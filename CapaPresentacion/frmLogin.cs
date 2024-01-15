@@ -70,8 +70,13 @@ namespace CapaPresentacion
 
         private void lblCrearUsuario_Click(object sender, EventArgs e)
         {
-            frmCrearUsuario frmCrearUsuario= new frmCrearUsuario();
+            frmCrearUsuario frmCrearUsuario = new frmCrearUsuario();
             frmCrearUsuario.ShowDialog();
+        }
+
+        private void txtPass_Enter(object sender, EventArgs e)
+        {
+           
         }
     }
 }

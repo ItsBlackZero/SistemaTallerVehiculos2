@@ -60,7 +60,7 @@
             // txtUser
             // 
             txtUser.BackColor = SystemColors.Window;
-            txtUser.ForeColor = SystemColors.ScrollBar;
+            txtUser.ForeColor = SystemColors.InfoText;
             txtUser.Location = new Point(106, 147);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(181, 23);
@@ -78,12 +78,13 @@
             // txtPass
             // 
             txtPass.BackColor = SystemColors.Window;
-            txtPass.ForeColor = SystemColors.ScrollBar;
+            txtPass.ForeColor = SystemColors.InfoText;
             txtPass.Location = new Point(106, 190);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(181, 23);
             txtPass.TabIndex = 4;
             txtPass.UseSystemPasswordChar = true;
+            txtPass.Enter += txtPass_Enter;
             // 
             // lblOlvideContrasena
             // 

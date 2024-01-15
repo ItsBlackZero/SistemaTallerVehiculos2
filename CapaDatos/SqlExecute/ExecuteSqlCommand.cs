@@ -142,6 +142,46 @@ namespace CapaDatos.SqlExecute
 
         }
 
+        public List<string> ExecuteSpQueryList(string nombre_sp, List<CD_ParameterSP> lista_paramteros)
+        {
+
+            var comando = new SqlCommand();
+            comando.Connection = conn.AbrirConexion(); //asigno conexion
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombre_sp;
+            if (lista_paramteros.Count > 0)
+            {
+                foreach (var parametro in lista_paramteros)
+                    comando.Parameters.Add(parametro.NombreParametro, parametro.TipoDato).Value = parametro.ValorParametro;
+            }
+            List<string> lista = new List<string>();
+            SqlDataReader reader = comando.ExecuteReader();
+
+            lista.Add(reader.ToString());
+            reader.DisposeAsync();
+            conn.CerrarConexion();
+            return lista;
+
+        }
+
+        public string ExecuteSpQueryC(string nombre_sp)
+        {
+
+            var comando = new SqlCommand();
+            comando.Connection = conn.AbrirConexion(); //asigno conexion
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombre_sp;
+            
+            object result = comando.ExecuteScalar();
+
+            string codigo = result.ToString();
+            conn.CerrarConexion();
+            return codigo;
+
+            
+
+        }
+
 
     }
 }

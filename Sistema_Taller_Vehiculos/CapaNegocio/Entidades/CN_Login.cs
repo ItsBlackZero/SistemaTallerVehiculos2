@@ -15,6 +15,7 @@ namespace CapaNegocio.Entidades
         private string password;
         private string nombre;
         private string email;
+        private string apellido;
 
         private InterfaceNegocio obj_interface_login = new InterfaceNegocio();
         public int Login ( CN_Login login)
@@ -39,7 +40,7 @@ namespace CapaNegocio.Entidades
             try
             {
                 List<CD_ParameterSP> lista = new List<CD_ParameterSP>();
-                lista.Add(new CD_ParameterSP("@nombre",usuario.nombre,System.Data.SqlDbType.Text));
+                lista.Add(new CD_ParameterSP("@Nombre",usuario.nombre,System.Data.SqlDbType.Text));
                 lista.Add(new CD_ParameterSP("@usuario",usuario.user,System.Data.SqlDbType.Text));
                 lista.Add(new CD_ParameterSP("@pass",usuario.password,System.Data.SqlDbType.Text));
                 lista.Add(new CD_ParameterSP("@correo",usuario.email,System.Data.SqlDbType.Text));
@@ -60,6 +61,7 @@ namespace CapaNegocio.Entidades
         public string Password { get { return password; } set { password = value; } }
         public string Email { get { return email; }set { email = value; } }
         public string Nombre { get { return nombre; } set { nombre = value; } }
+        public string Apellido {  get { return apellido; } set {  apellido = value; } }
         
     }
 }

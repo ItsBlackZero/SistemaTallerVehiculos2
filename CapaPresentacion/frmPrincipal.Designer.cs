@@ -31,12 +31,18 @@
             menuStrip1 = new MenuStrip();
             ingresoToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
+            vehiculosToolStripMenuItem = new ToolStripMenuItem();
+            mantenimientoToolStripMenuItem = new ToolStripMenuItem();
+            consultarToolStripMenuItem = new ToolStripMenuItem();
+            clientesToolStripMenuItem1 = new ToolStripMenuItem();
+            mecanicoToolStripMenuItem = new ToolStripMenuItem();
+            vehiculoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ingresoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ingresoToolStripMenuItem, consultarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -45,7 +51,7 @@
             // 
             // ingresoToolStripMenuItem
             // 
-            ingresoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem });
+            ingresoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem, vehiculosToolStripMenuItem, mantenimientoToolStripMenuItem });
             ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
             ingresoToolStripMenuItem.Size = new Size(58, 20);
             ingresoToolStripMenuItem.Text = "Ingreso";
@@ -56,6 +62,48 @@
             clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
+            // 
+            // vehiculosToolStripMenuItem
+            // 
+            vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
+            vehiculosToolStripMenuItem.Size = new Size(180, 22);
+            vehiculosToolStripMenuItem.Text = "Vehiculos";
+            vehiculosToolStripMenuItem.Click += vehiculosToolStripMenuItem_Click;
+            // 
+            // mantenimientoToolStripMenuItem
+            // 
+            mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            mantenimientoToolStripMenuItem.Size = new Size(180, 22);
+            mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            mantenimientoToolStripMenuItem.Click += mantenimientoToolStripMenuItem_Click;
+            // 
+            // consultarToolStripMenuItem
+            // 
+            consultarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem1, mecanicoToolStripMenuItem, vehiculoToolStripMenuItem });
+            consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            consultarToolStripMenuItem.Size = new Size(70, 20);
+            consultarToolStripMenuItem.Text = "Consultar";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            clientesToolStripMenuItem1.Size = new Size(180, 22);
+            clientesToolStripMenuItem1.Text = "Clientes";
+            clientesToolStripMenuItem1.Click += clientesToolStripMenuItem1_Click;
+            // 
+            // mecanicoToolStripMenuItem
+            // 
+            mecanicoToolStripMenuItem.Name = "mecanicoToolStripMenuItem";
+            mecanicoToolStripMenuItem.Size = new Size(180, 22);
+            mecanicoToolStripMenuItem.Text = "Mecanico";
+            mecanicoToolStripMenuItem.Click += mecanicoToolStripMenuItem_Click;
+            // 
+            // vehiculoToolStripMenuItem
+            // 
+            vehiculoToolStripMenuItem.Name = "vehiculoToolStripMenuItem";
+            vehiculoToolStripMenuItem.Size = new Size(180, 22);
+            vehiculoToolStripMenuItem.Text = "Vehiculo";
+            vehiculoToolStripMenuItem.Click += vehiculoToolStripMenuItem_Click;
             // 
             // frmPrincipal
             // 
@@ -77,5 +125,11 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem ingresoToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem consultarToolStripMenuItem;
+        private ToolStripMenuItem clientesToolStripMenuItem1;
+        private ToolStripMenuItem mecanicoToolStripMenuItem;
+        private ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private ToolStripMenuItem vehiculosToolStripMenuItem;
+        private ToolStripMenuItem vehiculoToolStripMenuItem;
     }
 }

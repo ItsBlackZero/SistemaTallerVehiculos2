@@ -33,7 +33,20 @@ namespace CapaNegocio.Entidades
                 throw new Exception("Error al obtener los clientes"+ ex.Message);
             }
         }
-
+        public DataTable getClienteByCedula(CN_IngresoCliente cliente)
+        {
+            try
+            {
+                var tabla= new DataTable();
+                List<CD_ParameterSP> lista = new List<CD_ParameterSP>();
+                lista.Add(new CD_ParameterSP("@cedula", cliente.cedula, SqlDbType.Text));
+                tabla = obj_interface_Ingreso_Cliente.getClienteByCedula(lista);
+                return tabla;
+            }catch (Exception ex)
+            {
+                throw new Exception("Error al obtener cliente"+ex.Message);
+            }
+        }
         public bool crearCliente(CN_IngresoCliente cliente)
         {
             try { 

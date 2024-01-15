@@ -55,3 +55,9 @@ C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentac
 C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.csproj.CopyComplete
 C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmCrearUsuario.resources
 C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmIngresoCliente.resources
+C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmConsultarCliente.resources
+C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmConsultarMecanico.resources
+C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmIngresoMantenimiento.resources
+C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmIngresoVehiculo.resources
+C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmConsultarVehiculo.resources
+C:\Users\Miguel\OneDrive\Universidad\5 SEMESTRE\POE\PROYECTO FINAL\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmMantenimientoCorrectivo.resources

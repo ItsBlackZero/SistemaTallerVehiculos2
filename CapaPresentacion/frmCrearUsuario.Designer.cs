@@ -58,7 +58,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(121, 83);
+            txtUsuario.Location = new Point(121, 84);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(100, 23);
             txtUsuario.TabIndex = 3;
@@ -66,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(58, 86);
+            label2.Location = new Point(58, 87);
             label2.Name = "label2";
             label2.Size = new Size(50, 15);
             label2.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(121, 112);
+            txtPassword.Location = new Point(121, 113);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(100, 23);
             txtPassword.TabIndex = 5;
@@ -82,7 +82,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(58, 115);
+            label3.Location = new Point(58, 116);
             label3.Name = "label3";
             label3.Size = new Size(63, 15);
             label3.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(121, 141);
+            txtCorreo.Location = new Point(121, 142);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(100, 23);
             txtCorreo.TabIndex = 7;
@@ -98,7 +98,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(58, 144);
+            label4.Location = new Point(58, 145);
             label4.Name = "label4";
             label4.Size = new Size(49, 15);
             label4.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(146, 179);
+            btnAceptar.Location = new Point(146, 180);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(75, 23);
             btnAceptar.TabIndex = 8;
