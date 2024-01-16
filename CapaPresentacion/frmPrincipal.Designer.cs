@@ -37,6 +37,7 @@
             clientesToolStripMenuItem1 = new ToolStripMenuItem();
             mecanicoToolStripMenuItem = new ToolStripMenuItem();
             vehiculoToolStripMenuItem = new ToolStripMenuItem();
+            facturasToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,27 +60,27 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Size = new Size(156, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // vehiculosToolStripMenuItem
             // 
             vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            vehiculosToolStripMenuItem.Size = new Size(180, 22);
+            vehiculosToolStripMenuItem.Size = new Size(156, 22);
             vehiculosToolStripMenuItem.Text = "Vehiculos";
             vehiculosToolStripMenuItem.Click += vehiculosToolStripMenuItem_Click;
             // 
             // mantenimientoToolStripMenuItem
             // 
             mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            mantenimientoToolStripMenuItem.Size = new Size(180, 22);
+            mantenimientoToolStripMenuItem.Size = new Size(156, 22);
             mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             mantenimientoToolStripMenuItem.Click += mantenimientoToolStripMenuItem_Click;
             // 
             // consultarToolStripMenuItem
             // 
-            consultarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem1, mecanicoToolStripMenuItem, vehiculoToolStripMenuItem });
+            consultarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem1, mecanicoToolStripMenuItem, vehiculoToolStripMenuItem, facturasToolStripMenuItem });
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             consultarToolStripMenuItem.Size = new Size(70, 20);
             consultarToolStripMenuItem.Text = "Consultar";
@@ -104,6 +105,13 @@
             vehiculoToolStripMenuItem.Size = new Size(180, 22);
             vehiculoToolStripMenuItem.Text = "Vehiculo";
             vehiculoToolStripMenuItem.Click += vehiculoToolStripMenuItem_Click;
+            // 
+            // facturasToolStripMenuItem
+            // 
+            facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            facturasToolStripMenuItem.Size = new Size(180, 22);
+            facturasToolStripMenuItem.Text = "Facturas";
+            facturasToolStripMenuItem.Click += facturasToolStripMenuItem_Click;
             // 
             // frmPrincipal
             // 
@@ -131,5 +139,6 @@
         private ToolStripMenuItem mantenimientoToolStripMenuItem;
         private ToolStripMenuItem vehiculosToolStripMenuItem;
         private ToolStripMenuItem vehiculoToolStripMenuItem;
+        private ToolStripMenuItem facturasToolStripMenuItem;
     }
 }

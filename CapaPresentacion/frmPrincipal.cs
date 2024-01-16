@@ -56,8 +56,15 @@ namespace CapaPresentacion
         private void vehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultarVehiculo frmConsultarVehiculo = new frmConsultarVehiculo();
-            frmConsultarVehiculo.MdiParent=this;
-            frmConsultarVehiculo .Show();
+            frmConsultarVehiculo.MdiParent = this;
+            frmConsultarVehiculo.Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFactura frmFactura = new frmFactura();
+            frmFactura.MdiParent = this;
+            frmFactura.Show();
         }
     }
 }

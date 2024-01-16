@@ -67,6 +67,28 @@ namespace CapaDatos.Interface
                 throw new Exception("ERROR AL CREAR SERVICIO" + ex.Message);
             }
         }
+        public Decimal obtenerValorServicio(List<CD_ParameterSP> lista)
+        {
+            try
+            {
+                return obj_db.ExecuteSpQueryC("SP_GET_VALOR_SERVICIO", lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ERROR AL CREAR SERVICIO" + ex.Message);
+            }
+        }
+        public bool crearFactura(List<CD_ParameterSP> lista)
+        {
+            try
+            {
+                return obj_db.ExecuteSpNonQuery("SP_INSERTAR_FACTURA", lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ERROR AL CREAR FACTURA" + ex.Message);
+            }
+        }
 
         public bool crearVehiculo(List<CD_ParameterSP> lista)
         {
@@ -166,8 +188,20 @@ namespace CapaDatos.Interface
                 throw new Exception("Error al obtener Mecanico" + ex.Message);
             }
         }
+        public DataTable getListaFactura()
+        {
+            try
+            {
+                List<CD_ParameterSP> lista = new List<CD_ParameterSP>();
+                return obj_db.ExecuteSpQuery("SP_GET_FACTURA_COMPLETA", lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener Mecanico" + ex.Message);
+            }
+        }
 
-        
+
 
         public DataTable getClienteByCedula(List<CD_ParameterSP>lista)
         {

@@ -13,4 +13,12 @@
     <SourceRoot Include="C:\Users\Miguel\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)reportgenerator\5.2.0\build\netstandard2.0\ReportGenerator.props" Condition="Exists('$(NuGetPackageRoot)reportgenerator\5.2.0\build\netstandard2.0\ReportGenerator.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgReportGenerator Condition=" '$(PkgReportGenerator)' == '' ">C:\Users\Miguel\.nuget\packages\reportgenerator\5.2.0</PkgReportGenerator>
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\Miguel\.nuget\packages\microsoft.web.webview2\1.0.864.35</PkgMicrosoft_Web_WebView2>
+    <PkgMicrosoft_SqlServer_Types Condition=" '$(PkgMicrosoft_SqlServer_Types)' == '' ">C:\Users\Miguel\.nuget\packages\microsoft.sqlserver.types\14.0.314.76</PkgMicrosoft_SqlServer_Types>
+  </PropertyGroup>
 </Project>

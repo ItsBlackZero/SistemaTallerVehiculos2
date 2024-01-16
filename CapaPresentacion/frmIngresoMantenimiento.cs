@@ -22,9 +22,6 @@ namespace CapaPresentacion
             obtenerVehiculo();
             obtenerCliente();
             obtenerServicio();
-
-
-
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -43,12 +40,30 @@ namespace CapaPresentacion
             obj_mantenimiento.Id_Vehiculo = idVehiculo;
             obj_mantenimiento.RepuestosUtilizados = txtRepuestosUtilizados.Text;
             obj_mantenimiento.Id_Mantenimiento = obtenerIdMantenimiento();
+
+            
+
+            calcularValorReparacion();
             setearRepuestos();
             comprobarChecked();
             ingresarBaseDatos();
             this.Dispose();
+            frmFactura frm = new frmFactura();
+            frm.ShowDialog();
         }
+        private void calcularValorReparacion()
+        {
+            if (rbCorrectivo.Checked)
+            {
+                decimal valorTotal = Convert.ToDecimal( txtValorRepuestos.Text) + Convert.ToDecimal (txtValorReparacion.Text)+ obtenerValorServicio();
+                obj_mantenimiento.ValorReparacion = valorTotal;
+            }
+            else
+            {
+                obj_mantenimiento.ValorReparacion = Convert.ToDecimal(txtValorReparacion.Text)+obtenerValorServicio();
 
+            }
+        }
         private void setearRepuestos()
         {
             if (txtValorRepuestos.ReadOnly == true)
@@ -77,9 +92,9 @@ namespace CapaPresentacion
         {
             try
             {
-                if(rbServicioNo.Checked == true)
+                if (rbServicioNo.Checked == true)
                 {
-                    if (obj_mantenimiento.ingresarMantenimiento(obj_mantenimiento))
+                    if (obj_mantenimiento.ingresarMantenimiento(obj_mantenimiento) && obj_mantenimiento.ingresarFactura(obj_mantenimiento))
                     {
                         MessageBox.Show("Registro Insertado con EXITO");
                     }
@@ -90,7 +105,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    if (obj_mantenimiento.ingresarMantenimiento(obj_mantenimiento) && obj_mantenimiento.ingresarServicio(obj_mantenimiento))
+                    if (obj_mantenimiento.ingresarMantenimiento(obj_mantenimiento) && obj_mantenimiento.ingresarFactura(obj_mantenimiento) && obj_mantenimiento.ingresarServicio(obj_mantenimiento))
                     {
                         MessageBox.Show("Registro Insertado con EXITO");
                     }
@@ -183,6 +198,9 @@ namespace CapaPresentacion
             {
                 cmbServicio.DataSource = obj_mantenimiento.getServicio();
                 cmbServicio.DisplayMember = "NombreServicio";
+
+                
+
                 cmbServicio.ValueMember = "Id_Servicio";
             }
             catch (Exception ex)
@@ -190,12 +208,29 @@ namespace CapaPresentacion
                 MessageBox.Show("Error al obtener Servicios: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private decimal obtenerValorServicio()
+        {
+            try
+            {
+
+
+
+
+                return obj_mantenimiento.ValorServicio = obj_mantenimiento.getValorServicio(obj_mantenimiento); ;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+                MessageBox.Show("Error al obtener Servicios: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private int obtenerIdMantenimiento()
         {
             try
             {
-                return Convert.ToInt32(obj_mantenimiento.getIdMantenimiento())+1;
+                return Convert.ToInt32(obj_mantenimiento.getIdMantenimiento()) + 1;
 
             }
             catch (Exception ex)
@@ -267,32 +302,5 @@ namespace CapaPresentacion
         {
             cmbServicio.Enabled = false;
         }
-
-        /*private void limpiarCampos()
-        {
-            txtApellidos.Text = string.Empty;
-            txtCedula.Text = string.Empty;
-            txtDireccion.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            txtTelefono.Text = string.Empty;
-        }*/
-        /*private bool validarCamposVacios()
-        {
-            try
-            {
-                if (txtDiagnostico.Text.Length != 0 && cmbCliente.Text.Length != 0 && c.Text.Length != 0 && txtDireccion.Text.Length != 0)
-                {
-                    return true;
-                }
-                MessageBox.Show("Por favor, llene todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }*/
     }
 }

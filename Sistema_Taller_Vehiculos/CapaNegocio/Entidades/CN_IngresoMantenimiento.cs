@@ -24,6 +24,8 @@ namespace CapaNegocio.Entidades
         private string repuestosUtilizados;
         private float valorRepuestos;
         private int id_servicio;
+        private decimal valorReparacion;
+        private decimal valorServicio;
 
         public CN_IngresoMantenimiento ()
         {
@@ -162,6 +164,7 @@ namespace CapaNegocio.Entidades
                 throw new Exception("Error al obtener la lista mecanico" + ex.Message);
             }
         }
+        
 
         public bool ingresarMantenimiento(CN_IngresoMantenimiento mantenimiento)
         {
@@ -188,6 +191,24 @@ namespace CapaNegocio.Entidades
                 throw new Exception("Error al crear cliente" + ex.Message);
             }
         }
+        public bool ingresarFactura(CN_IngresoMantenimiento mantenimiento)
+        {
+            try
+            {
+                List<CD_ParameterSP> lista = new List<CD_ParameterSP>();
+                lista.Add(new CD_ParameterSP("@Id_Mantenimiento", mantenimiento.id_mantenimiento, SqlDbType.Int));
+                lista.Add(new CD_ParameterSP("@Total", mantenimiento.valorReparacion, SqlDbType.Decimal));
+
+                return obj_interfaceMantenimiento.crearFactura(lista);
+
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw new Exception("Error al crear factura" + ex.Message);
+            }
+        }
         public bool ingresarServicio(CN_IngresoMantenimiento mantenimiento)
         {
             try
@@ -207,6 +228,24 @@ namespace CapaNegocio.Entidades
             }
         }
 
+        public Decimal getValorServicio(CN_IngresoMantenimiento mantenimiento)
+        {
+            try
+            {
+                List<CD_ParameterSP> lista = new List<CD_ParameterSP>();
+                lista.Add(new CD_ParameterSP("@Id_Servicio", mantenimiento.id_servicio, SqlDbType.Int));
+
+                return obj_interfaceMantenimiento.obtenerValorServicio(lista);
+
+
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Error al crear cliente" + ex.Message);
+            }
+        }
+
         public int Id_Mantenimiento { get { return id_mantenimiento; } set { id_mantenimiento = value; } }
     
         public string Codigo { get { return codigo; } set { codigo= value; } }
@@ -220,6 +259,7 @@ namespace CapaNegocio.Entidades
         public string RepuestosUtilizados { get { return repuestosUtilizados; }set {  repuestosUtilizados = value;} }
         public float ValorRespuestos { get { return valorRepuestos; }set {  valorRepuestos = value; } }
         public int Id_servicio { get { return id_servicio;}set { id_servicio = value; } }
-
+        public decimal ValorReparacion { get {  return valorReparacion; }set { valorReparacion = value; } }
+        public decimal ValorServicio {  get { return valorServicio; }set { valorServicio = value;} }
     }
 }

@@ -2,11 +2,11 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "Azure.Core/1.25.0": {
+      "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
-          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Memory.Data": "1.0.2",
           "System.Numerics.Vectors": "4.5.0",
           "System.Text.Encodings.Web": "4.7.2",
@@ -14,22 +14,22 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/net5.0/Azure.Core.dll": {
+          "lib/net6.0/Azure.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/Azure.Core.dll": {
+          "lib/net6.0/Azure.Core.dll": {
             "related": ".xml"
           }
         }
       },
-      "Azure.Identity/1.7.0": {
+      "Azure.Identity/1.10.3": {
         "type": "package",
         "dependencies": {
-          "Azure.Core": "1.25.0",
-          "Microsoft.Identity.Client": "4.39.0",
-          "Microsoft.Identity.Client.Extensions.Msal": "2.19.3",
+          "Azure.Core": "1.35.0",
+          "Microsoft.Identity.Client": "4.56.0",
+          "Microsoft.Identity.Client.Extensions.Msal": "4.56.0",
           "System.Memory": "4.5.4",
           "System.Security.Cryptography.ProtectedData": "4.7.0",
           "System.Text.Json": "4.7.2",
@@ -66,17 +66,17 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Microsoft.Data.SqlClient/5.1.2": {
+      "Microsoft.Data.SqlClient/5.1.4": {
         "type": "package",
         "dependencies": {
-          "Azure.Identity": "1.7.0",
+          "Azure.Identity": "1.10.3",
           "Microsoft.Data.SqlClient.SNI.runtime": "5.1.1",
-          "Microsoft.Identity.Client": "4.47.2",
+          "Microsoft.Identity.Client": "4.56.0",
           "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.24.0",
           "Microsoft.SqlServer.Server": "1.0.0",
           "System.Configuration.ConfigurationManager": "6.0.1",
-          "System.Diagnostics.DiagnosticSource": "6.0.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Runtime.Caching": "6.0.0",
           "System.Security.Cryptography.Cng": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0",
@@ -125,36 +125,65 @@
           }
         }
       },
-      "Microsoft.Identity.Client/4.47.2": {
+      "Microsoft.Identity.Client/4.56.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Abstractions": "6.22.0"
+          "Microsoft.Identity.Client.NativeInterop": "0.13.8",
+          "Microsoft.IdentityModel.Abstractions": "6.22.0",
+          "Microsoft.Web.WebView2": "1.0.864.35"
         },
         "compile": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {
+          "lib/net6.0-windows7.0/Microsoft.Identity.Client.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {
+          "lib/net6.0-windows7.0/Microsoft.Identity.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Microsoft.Identity.Client.Extensions.Msal/4.56.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.56.0",
+          "System.IO.FileSystem.AccessControl": "5.0.0",
+          "System.Security.Cryptography.ProtectedData": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
             "related": ".xml"
           }
         }
       },
-      "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
+      "Microsoft.Identity.Client.NativeInterop/0.13.8": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Identity.Client": "4.38.0",
-          "System.Security.Cryptography.ProtectedData": "4.5.0"
-        },
         "compile": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Identity.Client.NativeInterop.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
-            "related": ".xml"
+          "lib/netstandard2.0/Microsoft.Identity.Client.NativeInterop.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/msalruntime_arm64.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/msalruntime.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/msalruntime_x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
         }
       },
@@ -275,6 +304,148 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.ReportingServices.ReportViewerControl.Winforms/150.1586.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.SqlServer.Types": "14.0.0"
+        },
+        "compile": {
+          "lib/net40/Microsoft.ReportViewer.Common.dll": {},
+          "lib/net40/Microsoft.ReportViewer.DataVisualization.dll": {},
+          "lib/net40/Microsoft.ReportViewer.Design.dll": {},
+          "lib/net40/Microsoft.ReportViewer.ProcessingObjectModel.dll": {},
+          "lib/net40/Microsoft.ReportViewer.WinForms.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.ReportViewer.Common.dll": {},
+          "lib/net40/Microsoft.ReportViewer.DataVisualization.dll": {},
+          "lib/net40/Microsoft.ReportViewer.Design.dll": {},
+          "lib/net40/Microsoft.ReportViewer.ProcessingObjectModel.dll": {},
+          "lib/net40/Microsoft.ReportViewer.WinForms.dll": {}
+        },
+        "resource": {
+          "lib/net40/de/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40/de/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40/de/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40/de/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40/es/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net40/es/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net40/es/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net40/es/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net40/fr/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40/fr/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40/fr/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40/fr/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40/it/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net40/it/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net40/it/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net40/it/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net40/ja/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net40/ja/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net40/ja/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net40/ja/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net40/ko/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net40/ko/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net40/ko/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net40/ko/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net40/pt/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net40/pt/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net40/pt/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net40/pt/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net40/ru/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net40/ru/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net40/ru/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net40/ru/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net40/zh-CHS/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "zh-CHS"
+          },
+          "lib/net40/zh-CHS/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "zh-CHS"
+          },
+          "lib/net40/zh-CHS/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "zh-CHS"
+          },
+          "lib/net40/zh-CHS/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "zh-CHS"
+          },
+          "lib/net40/zh-CHT/Microsoft.ReportViewer.Common.resources.dll": {
+            "locale": "zh-CHT"
+          },
+          "lib/net40/zh-CHT/Microsoft.ReportViewer.DataVisualization.resources.dll": {
+            "locale": "zh-CHT"
+          },
+          "lib/net40/zh-CHT/Microsoft.ReportViewer.Design.resources.dll": {
+            "locale": "zh-CHT"
+          },
+          "lib/net40/zh-CHT/Microsoft.ReportViewer.WinForms.resources.dll": {
+            "locale": "zh-CHT"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
@@ -285,6 +456,57 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.SqlServer.Types/14.0.314.76": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.SqlServer.Types.dll": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.864.35": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
         }
       },
@@ -335,6 +557,12 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "ReportGenerator/5.2.0": {
+        "type": "package",
+        "build": {
+          "build/netstandard2.0/ReportGenerator.props": {}
         }
       },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -420,7 +648,7 @@
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/6.0.0": {
+      "System.Diagnostics.DiagnosticSource/6.0.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -495,6 +723,29 @@
         "runtime": {
           "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "System.IO.FileSystem.AccessControl/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "assetType": "runtime",
+            "rid": "win"
           }
         }
       },
@@ -589,7 +840,7 @@
       "System.Security.AccessControl/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Security.AccessControl.dll": {
             "related": ".xml"
           }
         },
@@ -675,7 +926,7 @@
       "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
             "related": ".xml"
           }
         },
@@ -832,38 +1083,42 @@
     }
   },
   "libraries": {
-    "Azure.Core/1.25.0": {
-      "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
+    "Azure.Core/1.35.0": {
+      "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
-      "path": "azure.core/1.25.0",
+      "path": "azure.core/1.35.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.core.1.25.0.nupkg.sha512",
+        "azure.core.1.35.0.nupkg.sha512",
         "azure.core.nuspec",
         "azureicon.png",
         "lib/net461/Azure.Core.dll",
         "lib/net461/Azure.Core.xml",
+        "lib/net472/Azure.Core.dll",
+        "lib/net472/Azure.Core.xml",
         "lib/net5.0/Azure.Core.dll",
         "lib/net5.0/Azure.Core.xml",
+        "lib/net6.0/Azure.Core.dll",
+        "lib/net6.0/Azure.Core.xml",
         "lib/netcoreapp2.1/Azure.Core.dll",
         "lib/netcoreapp2.1/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
       ]
     },
-    "Azure.Identity/1.7.0": {
-      "sha512": "eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
+    "Azure.Identity/1.10.3": {
+      "sha512": "l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==",
       "type": "package",
-      "path": "azure.identity/1.7.0",
+      "path": "azure.identity/1.10.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.identity.1.7.0.nupkg.sha512",
+        "azure.identity.1.10.3.nupkg.sha512",
         "azure.identity.nuspec",
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
@@ -963,10 +1218,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Data.SqlClient/5.1.2": {
-      "sha512": "q/F1HTOn9QLwgRp4esJIA1b2X15faeV8WozkNhvU3Zk0DcYDWUsEf5WMkbypY4CaNkZntOduods5wLyv8I699w==",
+    "Microsoft.Data.SqlClient/5.1.4": {
+      "sha512": "RSGSodusrPSVPKBLETRTH51G0yUQS28rD1hi2svTKS1GOsvUWxUpE8hgnKnUFC9RNjzfQmfUp+T0lJHFtlT3HQ==",
       "type": "package",
-      "path": "microsoft.data.sqlclient/5.1.2",
+      "path": "microsoft.data.sqlclient/5.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -993,7 +1248,7 @@
         "lib/netstandard2.1/Microsoft.Data.SqlClient.dll",
         "lib/netstandard2.1/Microsoft.Data.SqlClient.pdb",
         "lib/netstandard2.1/Microsoft.Data.SqlClient.xml",
-        "microsoft.data.sqlclient.5.1.2.nupkg.sha512",
+        "microsoft.data.sqlclient.5.1.4.nupkg.sha512",
         "microsoft.data.sqlclient.nuspec",
         "ref/net462/Microsoft.Data.SqlClient.dll",
         "ref/net462/Microsoft.Data.SqlClient.pdb",
@@ -1040,10 +1295,10 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
-    "Microsoft.Identity.Client/4.47.2": {
-      "sha512": "SPgesZRbXoDxg8Vv7k5Ou0ee7uupVw0E8ZCc4GKw25HANRLz1d5OSr0fvTVQRnEswo5Obk8qD4LOapYB+n5kzQ==",
+    "Microsoft.Identity.Client/4.56.0": {
+      "sha512": "rr4zbidvHy9r4NvOAs5hdd964Ao2A0pAeFBJKR95u1CJAVzbd1p6tPTXUZ+5ld0cfThiVSGvz6UHwY6JjraTpA==",
       "type": "package",
-      "path": "microsoft.identity.client/4.47.2",
+      "path": "microsoft.identity.client/4.56.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1055,12 +1310,14 @@
         "lib/net45/Microsoft.Identity.Client.xml",
         "lib/net461/Microsoft.Identity.Client.dll",
         "lib/net461/Microsoft.Identity.Client.xml",
-        "lib/net5.0-windows10.0.17763/Microsoft.Identity.Client.dll",
-        "lib/net5.0-windows10.0.17763/Microsoft.Identity.Client.xml",
         "lib/net6.0-android31.0/Microsoft.Identity.Client.dll",
         "lib/net6.0-android31.0/Microsoft.Identity.Client.xml",
         "lib/net6.0-ios15.4/Microsoft.Identity.Client.dll",
         "lib/net6.0-ios15.4/Microsoft.Identity.Client.xml",
+        "lib/net6.0-windows7.0/Microsoft.Identity.Client.dll",
+        "lib/net6.0-windows7.0/Microsoft.Identity.Client.xml",
+        "lib/net6.0/Microsoft.Identity.Client.dll",
+        "lib/net6.0/Microsoft.Identity.Client.xml",
         "lib/netcoreapp2.1/Microsoft.Identity.Client.dll",
         "lib/netcoreapp2.1/Microsoft.Identity.Client.xml",
         "lib/netstandard2.0/Microsoft.Identity.Client.dll",
@@ -1070,27 +1327,39 @@
         "lib/uap10.0.17763/Microsoft.Identity.Client.xml",
         "lib/xamarinios10/Microsoft.Identity.Client.dll",
         "lib/xamarinios10/Microsoft.Identity.Client.xml",
-        "lib/xamarinmac20/Microsoft.Identity.Client.dll",
-        "lib/xamarinmac20/Microsoft.Identity.Client.xml",
-        "microsoft.identity.client.4.47.2.nupkg.sha512",
+        "microsoft.identity.client.4.56.0.nupkg.sha512",
         "microsoft.identity.client.nuspec"
       ]
     },
-    "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
-      "sha512": "zVVZjn8aW7W79rC1crioDgdOwaFTQorsSO6RgVlDDjc7MvbEGz071wSNrjVhzR0CdQn6Sefx7Abf1o7vasmrLg==",
+    "Microsoft.Identity.Client.Extensions.Msal/4.56.0": {
+      "sha512": "H12YAzEGK55vZ+QpxUzozhW8ZZtgPDuWvgA0JbdIR9UhMUplj29JhIgE2imuH8W2Nw9D8JKygR1uxRFtpSNcrg==",
       "type": "package",
-      "path": "microsoft.identity.client.extensions.msal/2.19.3",
+      "path": "microsoft.identity.client.extensions.msal/4.56.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net45/Microsoft.Identity.Client.Extensions.Msal.dll",
-        "lib/net45/Microsoft.Identity.Client.Extensions.Msal.xml",
-        "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll",
-        "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.xml",
         "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll",
         "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.xml",
-        "microsoft.identity.client.extensions.msal.2.19.3.nupkg.sha512",
+        "microsoft.identity.client.extensions.msal.4.56.0.nupkg.sha512",
         "microsoft.identity.client.extensions.msal.nuspec"
+      ]
+    },
+    "Microsoft.Identity.Client.NativeInterop/0.13.8": {
+      "sha512": "eccVwaDOan12YJrh6ntIBIXeKTNoWz+af2/c13lhvrDoX0ydVXitCXMJVz0dh2eJK5y2KJ7IfkEvNilB/A9V7A==",
+      "type": "package",
+      "path": "microsoft.identity.client.nativeinterop/0.13.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net461/Microsoft.Identity.Client.NativeInterop.props",
+        "buildtransitive/net461/Microsoft.Identity.Client.NativeInterop.targets",
+        "lib/net461/Microsoft.Identity.Client.NativeInterop.dll",
+        "lib/netstandard2.0/Microsoft.Identity.Client.NativeInterop.dll",
+        "microsoft.identity.client.nativeinterop.0.13.8.nupkg.sha512",
+        "microsoft.identity.client.nativeinterop.nuspec",
+        "runtimes/win-arm64/native/msalruntime_arm64.dll",
+        "runtimes/win-x64/native/msalruntime.dll",
+        "runtimes/win-x86/native/msalruntime_x86.dll"
       ]
     },
     "Microsoft.IdentityModel.Abstractions/6.24.0": {
@@ -1249,6 +1518,68 @@
         "runtime.json"
       ]
     },
+    "Microsoft.ReportingServices.ReportViewerControl.Winforms/150.1586.0": {
+      "sha512": "xuwUNUoK3JAcJbBL90AsLElCy7TReIamWt8V6DSFO1gQdS7QE52k3NTr02SCDeQF8rV/F1VV5yU4yxgaMEVqHA==",
+      "type": "package",
+      "path": "microsoft.reportingservices.reportviewercontrol.winforms/150.1586.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.ReportViewer.Common.dll",
+        "lib/net40/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/Microsoft.ReportViewer.DataVisualization.dll",
+        "lib/net40/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/Microsoft.ReportViewer.Design.dll",
+        "lib/net40/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/Microsoft.ReportViewer.ProcessingObjectModel.dll",
+        "lib/net40/Microsoft.ReportViewer.WinForms.dll",
+        "lib/net40/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/de/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/de/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/de/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/de/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/es/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/es/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/es/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/es/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/fr/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/fr/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/fr/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/fr/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/it/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/it/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/it/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/it/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/ja/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/ja/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/ja/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/ja/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/ko/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/ko/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/ko/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/ko/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/pt/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/pt/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/pt/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/pt/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/ru/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/ru/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/ru/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/ru/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/zh-CHS/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/zh-CHS/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/zh-CHS/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/zh-CHS/Microsoft.ReportViewer.WinForms.resources.dll",
+        "lib/net40/zh-CHT/Microsoft.ReportViewer.Common.resources.dll",
+        "lib/net40/zh-CHT/Microsoft.ReportViewer.DataVisualization.resources.dll",
+        "lib/net40/zh-CHT/Microsoft.ReportViewer.Design.resources.dll",
+        "lib/net40/zh-CHT/Microsoft.ReportViewer.WinForms.resources.dll",
+        "license/License_ReportViewer.rtf",
+        "license/ThirdPartyNotices_ReportViewer.txt",
+        "microsoft.reportingservices.reportviewercontrol.winforms.150.1586.0.nupkg.sha512",
+        "microsoft.reportingservices.reportviewercontrol.winforms.nuspec"
+      ]
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "sha512": "N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "type": "package",
@@ -1265,6 +1596,73 @@
         "lib/netstandard2.0/Microsoft.SqlServer.Server.xml",
         "microsoft.sqlserver.server.1.0.0.nupkg.sha512",
         "microsoft.sqlserver.server.nuspec"
+      ]
+    },
+    "Microsoft.SqlServer.Types/14.0.314.76": {
+      "sha512": "gAekCmSfjtRBaiuuRIqJJV6cfEsEbYY5vI7Ssoc5sYI04JcyPrZ4C8RC3z7K9xfpr9ejQAQ1AtfvtgqEnjmwOw==",
+      "type": "package",
+      "path": "microsoft.sqlserver.types/14.0.314.76",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/SqlServerTypes/Loader.cs",
+        "content/SqlServerTypes/readme.htm",
+        "lib/net40/Microsoft.SqlServer.Types.dll",
+        "license/license_SysClrTypes.rtf",
+        "microsoft.sqlserver.types.14.0.314.76.nupkg.sha512",
+        "microsoft.sqlserver.types.nuspec",
+        "nativeBinaries/x64/SqlServerSpatial140.dll",
+        "nativeBinaries/x64/msvcr120.dll",
+        "nativeBinaries/x86/SqlServerSpatial140.dll",
+        "nativeBinaries/x86/msvcr120.dll",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.Web.WebView2/1.0.864.35": {
+      "sha512": "V1qyLRiAZ31qmOOCFCjoONgaUfvJRiTHWcJWkT3V7pluM2+P6QAgqmbE4UX7Gt4sh6eN34wqM30OnTZ6HXI/sw==",
+      "type": "package",
+      "path": "microsoft.web.webview2/1.0.864.35",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "WebView2.idl",
+        "WebView2.tlb",
+        "build/Common.targets",
+        "build/Microsoft.Web.WebView2.targets",
+        "build/native/Microsoft.Web.WebView2.targets",
+        "build/native/arm64/WebView2Loader.dll",
+        "build/native/arm64/WebView2Loader.dll.lib",
+        "build/native/arm64/WebView2LoaderStatic.lib",
+        "build/native/include/WebView2.h",
+        "build/native/include/WebView2EnvironmentOptions.h",
+        "build/native/x64/WebView2Loader.dll",
+        "build/native/x64/WebView2Loader.dll.lib",
+        "build/native/x64/WebView2LoaderStatic.lib",
+        "build/native/x86/WebView2Loader.dll",
+        "build/native/x86/WebView2Loader.dll.lib",
+        "build/native/x86/WebView2LoaderStatic.lib",
+        "lib/net45/Microsoft.Web.WebView2.Core.dll",
+        "lib/net45/Microsoft.Web.WebView2.Core.xml",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.xml",
+        "microsoft.web.webview2.1.0.864.35.nupkg.sha512",
+        "microsoft.web.webview2.nuspec",
+        "runtimes/win-arm64/native/WebView2Loader.dll",
+        "runtimes/win-x64/native/WebView2Loader.dll",
+        "runtimes/win-x86/native/WebView2Loader.dll",
+        "tools/VisualStudioToolsManifest.xml"
       ]
     },
     "Microsoft.Win32.Registry/4.7.0": {
@@ -1341,6 +1739,278 @@
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "ReportGenerator/5.2.0": {
+      "sha512": "RkQL6U6+tp98ukBizie9ihnLVpN+OwUXRbpEzFFoLi2pTz9PqloOJCnhZhB58qPWKD3Bq3dbmfLpB9Um3oGkPQ==",
+      "type": "package",
+      "path": "reportgenerator/5.2.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "Readme.md",
+        "Readme.txt",
+        "build/netstandard2.0/ReportGenerator.props",
+        "icon.png",
+        "reportgenerator.5.2.0.nupkg.sha512",
+        "reportgenerator.nuspec",
+        "tools/net47/DotNetConfig.dll",
+        "tools/net47/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tools/net47/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "tools/net47/Microsoft.Extensions.Configuration.Binder.dll",
+        "tools/net47/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "tools/net47/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "tools/net47/Microsoft.Extensions.Configuration.Json.dll",
+        "tools/net47/Microsoft.Extensions.Configuration.dll",
+        "tools/net47/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "tools/net47/Microsoft.Extensions.FileProviders.Physical.dll",
+        "tools/net47/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "tools/net47/Microsoft.Extensions.Primitives.dll",
+        "tools/net47/Microsoft.NET.StringTools.dll",
+        "tools/net47/Microsoft.Win32.Primitives.dll",
+        "tools/net47/Microsoft.Win32.Registry.dll",
+        "tools/net47/ReportGenerator.Core.deps.json",
+        "tools/net47/ReportGenerator.Core.dll",
+        "tools/net47/ReportGenerator.MSBuild.dll",
+        "tools/net47/ReportGenerator.exe",
+        "tools/net47/ReportGenerator.exe.config",
+        "tools/net47/System.AppContext.dll",
+        "tools/net47/System.Buffers.dll",
+        "tools/net47/System.Collections.Concurrent.dll",
+        "tools/net47/System.Collections.Immutable.dll",
+        "tools/net47/System.Collections.NonGeneric.dll",
+        "tools/net47/System.Collections.Specialized.dll",
+        "tools/net47/System.Collections.dll",
+        "tools/net47/System.ComponentModel.EventBasedAsync.dll",
+        "tools/net47/System.ComponentModel.Primitives.dll",
+        "tools/net47/System.ComponentModel.TypeConverter.dll",
+        "tools/net47/System.ComponentModel.dll",
+        "tools/net47/System.Configuration.ConfigurationManager.dll",
+        "tools/net47/System.Console.dll",
+        "tools/net47/System.Data.Common.dll",
+        "tools/net47/System.Diagnostics.Contracts.dll",
+        "tools/net47/System.Diagnostics.Debug.dll",
+        "tools/net47/System.Diagnostics.FileVersionInfo.dll",
+        "tools/net47/System.Diagnostics.Process.dll",
+        "tools/net47/System.Diagnostics.StackTrace.dll",
+        "tools/net47/System.Diagnostics.TextWriterTraceListener.dll",
+        "tools/net47/System.Diagnostics.Tools.dll",
+        "tools/net47/System.Diagnostics.TraceSource.dll",
+        "tools/net47/System.Diagnostics.Tracing.dll",
+        "tools/net47/System.Drawing.Primitives.dll",
+        "tools/net47/System.Dynamic.Runtime.dll",
+        "tools/net47/System.Globalization.Calendars.dll",
+        "tools/net47/System.Globalization.Extensions.dll",
+        "tools/net47/System.Globalization.dll",
+        "tools/net47/System.IO.Compression.ZipFile.dll",
+        "tools/net47/System.IO.Compression.dll",
+        "tools/net47/System.IO.FileSystem.DriveInfo.dll",
+        "tools/net47/System.IO.FileSystem.Primitives.dll",
+        "tools/net47/System.IO.FileSystem.Watcher.dll",
+        "tools/net47/System.IO.FileSystem.dll",
+        "tools/net47/System.IO.IsolatedStorage.dll",
+        "tools/net47/System.IO.MemoryMappedFiles.dll",
+        "tools/net47/System.IO.Pipes.dll",
+        "tools/net47/System.IO.UnmanagedMemoryStream.dll",
+        "tools/net47/System.IO.dll",
+        "tools/net47/System.Linq.Expressions.dll",
+        "tools/net47/System.Linq.Parallel.dll",
+        "tools/net47/System.Linq.Queryable.dll",
+        "tools/net47/System.Linq.dll",
+        "tools/net47/System.Memory.dll",
+        "tools/net47/System.Net.Http.dll",
+        "tools/net47/System.Net.NameResolution.dll",
+        "tools/net47/System.Net.NetworkInformation.dll",
+        "tools/net47/System.Net.Ping.dll",
+        "tools/net47/System.Net.Primitives.dll",
+        "tools/net47/System.Net.Requests.dll",
+        "tools/net47/System.Net.Security.dll",
+        "tools/net47/System.Net.Sockets.dll",
+        "tools/net47/System.Net.WebHeaderCollection.dll",
+        "tools/net47/System.Net.WebSockets.Client.dll",
+        "tools/net47/System.Net.WebSockets.dll",
+        "tools/net47/System.Numerics.Vectors.dll",
+        "tools/net47/System.ObjectModel.dll",
+        "tools/net47/System.Reflection.Extensions.dll",
+        "tools/net47/System.Reflection.Primitives.dll",
+        "tools/net47/System.Reflection.dll",
+        "tools/net47/System.Resources.Reader.dll",
+        "tools/net47/System.Resources.ResourceManager.dll",
+        "tools/net47/System.Resources.Writer.dll",
+        "tools/net47/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/net47/System.Runtime.CompilerServices.VisualC.dll",
+        "tools/net47/System.Runtime.Extensions.dll",
+        "tools/net47/System.Runtime.Handles.dll",
+        "tools/net47/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "tools/net47/System.Runtime.InteropServices.dll",
+        "tools/net47/System.Runtime.Numerics.dll",
+        "tools/net47/System.Runtime.Serialization.Formatters.dll",
+        "tools/net47/System.Runtime.Serialization.Json.dll",
+        "tools/net47/System.Runtime.Serialization.Primitives.dll",
+        "tools/net47/System.Runtime.Serialization.Xml.dll",
+        "tools/net47/System.Runtime.dll",
+        "tools/net47/System.Security.AccessControl.dll",
+        "tools/net47/System.Security.Claims.dll",
+        "tools/net47/System.Security.Cryptography.Algorithms.dll",
+        "tools/net47/System.Security.Cryptography.Csp.dll",
+        "tools/net47/System.Security.Cryptography.Encoding.dll",
+        "tools/net47/System.Security.Cryptography.Primitives.dll",
+        "tools/net47/System.Security.Cryptography.X509Certificates.dll",
+        "tools/net47/System.Security.Permissions.dll",
+        "tools/net47/System.Security.Principal.Windows.dll",
+        "tools/net47/System.Security.Principal.dll",
+        "tools/net47/System.Security.SecureString.dll",
+        "tools/net47/System.Text.Encoding.CodePages.dll",
+        "tools/net47/System.Text.Encoding.Extensions.dll",
+        "tools/net47/System.Text.Encoding.dll",
+        "tools/net47/System.Text.Encodings.Web.dll",
+        "tools/net47/System.Text.Json.dll",
+        "tools/net47/System.Text.RegularExpressions.dll",
+        "tools/net47/System.Threading.Overlapped.dll",
+        "tools/net47/System.Threading.Tasks.Extensions.dll",
+        "tools/net47/System.Threading.Tasks.Parallel.dll",
+        "tools/net47/System.Threading.Tasks.dll",
+        "tools/net47/System.Threading.Thread.dll",
+        "tools/net47/System.Threading.ThreadPool.dll",
+        "tools/net47/System.Threading.Timer.dll",
+        "tools/net47/System.Threading.dll",
+        "tools/net47/System.ValueTuple.dll",
+        "tools/net47/System.Xml.ReaderWriter.dll",
+        "tools/net47/System.Xml.XDocument.dll",
+        "tools/net47/System.Xml.XPath.XDocument.dll",
+        "tools/net47/System.Xml.XPath.dll",
+        "tools/net47/System.Xml.XmlDocument.dll",
+        "tools/net47/System.Xml.XmlSerializer.dll",
+        "tools/net47/appsettings.json",
+        "tools/net47/netstandard.dll",
+        "tools/net6.0/DotNetConfig.dll",
+        "tools/net6.0/McMaster.NETCore.Plugins.dll",
+        "tools/net6.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "tools/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "tools/net6.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "tools/net6.0/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "tools/net6.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "tools/net6.0/Microsoft.Extensions.Configuration.Json.dll",
+        "tools/net6.0/Microsoft.Extensions.Configuration.dll",
+        "tools/net6.0/Microsoft.Extensions.DependencyModel.dll",
+        "tools/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "tools/net6.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "tools/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "tools/net6.0/Microsoft.Extensions.Primitives.dll",
+        "tools/net6.0/Microsoft.NET.StringTools.dll",
+        "tools/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "tools/net6.0/ReportGenerator.Core.dll",
+        "tools/net6.0/ReportGenerator.Core.xml",
+        "tools/net6.0/ReportGenerator.DotnetCorePluginLoader.dll",
+        "tools/net6.0/ReportGenerator.DotnetCorePluginLoader.xml",
+        "tools/net6.0/ReportGenerator.MSBuild.dll",
+        "tools/net6.0/ReportGenerator.deps.json",
+        "tools/net6.0/ReportGenerator.dll",
+        "tools/net6.0/ReportGenerator.exe",
+        "tools/net6.0/ReportGenerator.runtimeconfig.json",
+        "tools/net6.0/System.Collections.Immutable.dll",
+        "tools/net6.0/System.Configuration.ConfigurationManager.dll",
+        "tools/net6.0/System.Drawing.Common.dll",
+        "tools/net6.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net6.0/System.Security.Permissions.dll",
+        "tools/net6.0/System.Text.Encoding.CodePages.dll",
+        "tools/net6.0/System.Text.Encodings.Web.dll",
+        "tools/net6.0/System.Text.Json.dll",
+        "tools/net6.0/System.Windows.Extensions.dll",
+        "tools/net6.0/appsettings.json",
+        "tools/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
+        "tools/net6.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "tools/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+        "tools/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net6.0/runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
+        "tools/net6.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll",
+        "tools/net7.0/DotNetConfig.dll",
+        "tools/net7.0/McMaster.NETCore.Plugins.dll",
+        "tools/net7.0/Microsoft.Build.Framework.dll",
+        "tools/net7.0/Microsoft.Build.Utilities.Core.dll",
+        "tools/net7.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "tools/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "tools/net7.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "tools/net7.0/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "tools/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "tools/net7.0/Microsoft.Extensions.Configuration.Json.dll",
+        "tools/net7.0/Microsoft.Extensions.Configuration.dll",
+        "tools/net7.0/Microsoft.Extensions.DependencyModel.dll",
+        "tools/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "tools/net7.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "tools/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "tools/net7.0/Microsoft.Extensions.Primitives.dll",
+        "tools/net7.0/Microsoft.NET.StringTools.dll",
+        "tools/net7.0/Microsoft.VisualStudio.Setup.Configuration.Interop.dll",
+        "tools/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "tools/net7.0/ReportGenerator.Core.dll",
+        "tools/net7.0/ReportGenerator.Core.xml",
+        "tools/net7.0/ReportGenerator.DotnetCorePluginLoader.dll",
+        "tools/net7.0/ReportGenerator.DotnetCorePluginLoader.xml",
+        "tools/net7.0/ReportGenerator.MSBuild.dll",
+        "tools/net7.0/ReportGenerator.deps.json",
+        "tools/net7.0/ReportGenerator.dll",
+        "tools/net7.0/ReportGenerator.exe",
+        "tools/net7.0/ReportGenerator.runtimeconfig.json",
+        "tools/net7.0/System.Configuration.ConfigurationManager.dll",
+        "tools/net7.0/System.Diagnostics.EventLog.dll",
+        "tools/net7.0/System.Drawing.Common.dll",
+        "tools/net7.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net7.0/System.Security.Permissions.dll",
+        "tools/net7.0/System.Text.Encodings.Web.dll",
+        "tools/net7.0/System.Text.Json.dll",
+        "tools/net7.0/System.Windows.Extensions.dll",
+        "tools/net7.0/appsettings.json",
+        "tools/net7.0/runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll",
+        "tools/net7.0/runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "tools/net7.0/runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll",
+        "tools/net7.0/runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll",
+        "tools/net7.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll",
+        "tools/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net7.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll",
+        "tools/net8.0/DotNetConfig.dll",
+        "tools/net8.0/McMaster.NETCore.Plugins.dll",
+        "tools/net8.0/Microsoft.Build.Framework.dll",
+        "tools/net8.0/Microsoft.Build.Utilities.Core.dll",
+        "tools/net8.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "tools/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "tools/net8.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "tools/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "tools/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "tools/net8.0/Microsoft.Extensions.Configuration.Json.dll",
+        "tools/net8.0/Microsoft.Extensions.Configuration.dll",
+        "tools/net8.0/Microsoft.Extensions.DependencyModel.dll",
+        "tools/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "tools/net8.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "tools/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "tools/net8.0/Microsoft.Extensions.Primitives.dll",
+        "tools/net8.0/Microsoft.NET.StringTools.dll",
+        "tools/net8.0/Microsoft.VisualStudio.Setup.Configuration.Interop.dll",
+        "tools/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "tools/net8.0/ReportGenerator.Core.dll",
+        "tools/net8.0/ReportGenerator.Core.xml",
+        "tools/net8.0/ReportGenerator.DotnetCorePluginLoader.dll",
+        "tools/net8.0/ReportGenerator.DotnetCorePluginLoader.xml",
+        "tools/net8.0/ReportGenerator.MSBuild.dll",
+        "tools/net8.0/ReportGenerator.deps.json",
+        "tools/net8.0/ReportGenerator.dll",
+        "tools/net8.0/ReportGenerator.exe",
+        "tools/net8.0/ReportGenerator.runtimeconfig.json",
+        "tools/net8.0/System.Configuration.ConfigurationManager.dll",
+        "tools/net8.0/System.Diagnostics.EventLog.dll",
+        "tools/net8.0/System.Drawing.Common.dll",
+        "tools/net8.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net8.0/System.Security.Permissions.dll",
+        "tools/net8.0/System.Windows.Extensions.dll",
+        "tools/net8.0/appsettings.json",
+        "tools/net8.0/runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "tools/net8.0/runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll",
+        "tools/net8.0/runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll",
+        "tools/net8.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll",
+        "tools/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net8.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll"
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -1517,10 +2187,10 @@
         "version.txt"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/6.0.0": {
-      "sha512": "frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
+    "System.Diagnostics.DiagnosticSource/6.0.1": {
+      "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/6.0.0",
+      "path": "system.diagnostics.diagnosticsource/6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1537,7 +2207,7 @@
         "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1620,6 +2290,50 @@
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
         "system.identitymodel.tokens.jwt.6.24.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
+      ]
+    },
+    "System.IO.FileSystem.AccessControl/5.0.0": {
+      "sha512": "SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==",
+      "type": "package",
+      "path": "system.io.filesystem.accesscontrol/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.IO.FileSystem.AccessControl.dll",
+        "lib/net461/System.IO.FileSystem.AccessControl.dll",
+        "lib/net461/System.IO.FileSystem.AccessControl.xml",
+        "lib/netstandard1.3/System.IO.FileSystem.AccessControl.dll",
+        "lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll",
+        "lib/netstandard2.0/System.IO.FileSystem.AccessControl.xml",
+        "ref/net46/System.IO.FileSystem.AccessControl.dll",
+        "ref/net461/System.IO.FileSystem.AccessControl.dll",
+        "ref/net461/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/System.IO.FileSystem.AccessControl.dll",
+        "ref/netstandard1.3/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/de/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/es/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/fr/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/it/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/ja/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/ko/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/ru/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/zh-hans/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/zh-hant/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard2.0/System.IO.FileSystem.AccessControl.dll",
+        "ref/netstandard2.0/System.IO.FileSystem.AccessControl.xml",
+        "runtimes/win/lib/net46/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/net461/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/net461/System.IO.FileSystem.AccessControl.xml",
+        "runtimes/win/lib/netstandard1.3/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.xml",
+        "system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
+        "system.io.filesystem.accesscontrol.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Memory/4.5.4": {
@@ -2322,7 +3036,10 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "CapaNegocio >= 1.0.0"
+      "CapaNegocio >= 1.0.0",
+      "Microsoft.Data.SqlClient >= 5.1.4",
+      "Microsoft.ReportingServices.ReportViewerControl.Winforms >= 150.1586.0",
+      "ReportGenerator >= 5.2.0"
     ]
   },
   "packageFolders": {
@@ -2372,6 +3089,20 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": {
+            "target": "Package",
+            "version": "[5.1.4, )"
+          },
+          "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+            "target": "Package",
+            "version": "[150.1586.0, )"
+          },
+          "ReportGenerator": {
+            "target": "Package",
+            "version": "[5.2.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -2394,5 +3125,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1586.0 depende de Microsoft.SqlServer.Types (>= 14.0.0), pero no se encontró Microsoft.SqlServer.Types 14.0.0. Se resolvió una mejor coincidencia aproximada de Microsoft.SqlServer.Types 14.0.314.76.",
+      "libraryId": "Microsoft.SqlServer.Types",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1586.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Microsoft.ReportingServices.ReportViewerControl.Winforms",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Microsoft.SqlServer.Types 14.0.314.76\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Microsoft.SqlServer.Types",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

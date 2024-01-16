@@ -116,6 +116,7 @@ namespace CapaDatos.SqlExecute
             else
                 return false;
         }
+        
 
         public DataTable ExecuteSpQuery(string nombre_sp, List<CD_ParameterSP> lista_paramteros)
         {
@@ -179,6 +180,27 @@ namespace CapaDatos.SqlExecute
             return codigo;
 
             
+
+        }
+        public Decimal ExecuteSpQueryC(string nombre_sp, List<CD_ParameterSP> lista_paramteros)
+        {
+
+            var comando = new SqlCommand();
+            comando.Connection = conn.AbrirConexion(); //asigno conexion
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombre_sp;
+            if (lista_paramteros.Count > 0)
+            {
+                foreach (var parametro in lista_paramteros)
+                    comando.Parameters.Add(parametro.NombreParametro, parametro.TipoDato).Value = parametro.ValorParametro;
+            }
+            object result = comando.ExecuteScalar();
+
+            decimal valor= Convert.ToDecimal( result);
+            conn.CerrarConexion();
+            return valor;
+
+
 
         }
 

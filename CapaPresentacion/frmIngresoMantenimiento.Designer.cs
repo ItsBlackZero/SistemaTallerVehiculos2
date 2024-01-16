@@ -55,13 +55,15 @@
             rbServicioNo = new RadioButton();
             rbServicioSI = new RadioButton();
             grbMantenimiento = new GroupBox();
+            txtValorReparacion = new TextBox();
+            label12 = new Label();
             grbMantenimiento.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(98, 46);
+            label1.Location = new Point(98, 15);
             label1.Name = "label1";
             label1.Size = new Size(46, 15);
             label1.TabIndex = 0;
@@ -69,7 +71,7 @@
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(150, 43);
+            txtCodigo.Location = new Point(150, 12);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.ReadOnly = true;
             txtCodigo.Size = new Size(62, 23);
@@ -79,7 +81,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(82, 83);
+            label2.Location = new Point(82, 52);
             label2.Name = "label2";
             label2.Size = new Size(62, 15);
             label2.TabIndex = 2;
@@ -88,7 +90,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(97, 111);
+            label3.Location = new Point(97, 80);
             label3.Name = "label3";
             label3.Size = new Size(47, 15);
             label3.TabIndex = 4;
@@ -97,7 +99,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 141);
+            label4.Location = new Point(18, 110);
             label4.Name = "label4";
             label4.Size = new Size(126, 15);
             label4.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             // dtpFechaNacimiento
             // 
-            dtpFechaNacimiento.Location = new Point(150, 138);
+            dtpFechaNacimiento.Location = new Point(150, 107);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(200, 23);
             dtpFechaNacimiento.TabIndex = 7;
@@ -113,7 +115,7 @@
             // cmbCliente
             // 
             cmbCliente.FormattingEnabled = true;
-            cmbCliente.Location = new Point(150, 108);
+            cmbCliente.Location = new Point(150, 77);
             cmbCliente.Name = "cmbCliente";
             cmbCliente.Size = new Size(200, 23);
             cmbCliente.TabIndex = 12;
@@ -121,7 +123,7 @@
             // cmbMecanico
             // 
             cmbMecanico.FormattingEnabled = true;
-            cmbMecanico.Location = new Point(150, 80);
+            cmbMecanico.Location = new Point(150, 49);
             cmbMecanico.Name = "cmbMecanico";
             cmbMecanico.Size = new Size(200, 23);
             cmbMecanico.TabIndex = 13;
@@ -129,7 +131,7 @@
             // cmbVehiculo
             // 
             cmbVehiculo.FormattingEnabled = true;
-            cmbVehiculo.Location = new Point(150, 167);
+            cmbVehiculo.Location = new Point(150, 136);
             cmbVehiculo.Name = "cmbVehiculo";
             cmbVehiculo.Size = new Size(200, 23);
             cmbVehiculo.TabIndex = 15;
@@ -137,7 +139,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(89, 170);
+            label5.Location = new Point(89, 139);
             label5.Name = "label5";
             label5.Size = new Size(55, 15);
             label5.TabIndex = 14;
@@ -146,7 +148,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(71, 199);
+            label6.Location = new Point(71, 168);
             label6.Name = "label6";
             label6.Size = new Size(73, 15);
             label6.TabIndex = 16;
@@ -154,7 +156,7 @@
             // 
             // txtDiagnostico
             // 
-            txtDiagnostico.Location = new Point(150, 196);
+            txtDiagnostico.Location = new Point(150, 165);
             txtDiagnostico.Name = "txtDiagnostico";
             txtDiagnostico.Size = new Size(200, 23);
             txtDiagnostico.TabIndex = 17;
@@ -162,7 +164,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(33, 231);
+            label7.Location = new Point(33, 200);
             label7.Name = "label7";
             label7.Size = new Size(111, 15);
             label7.TabIndex = 18;
@@ -170,7 +172,7 @@
             // 
             // rtbTrabajosRealizados
             // 
-            rtbTrabajosRealizados.Location = new Point(150, 231);
+            rtbTrabajosRealizados.Location = new Point(150, 200);
             rtbTrabajosRealizados.Name = "rtbTrabajosRealizados";
             rtbTrabajosRealizados.Size = new Size(200, 96);
             rtbTrabajosRealizados.TabIndex = 19;
@@ -179,7 +181,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(24, 340);
+            label8.Location = new Point(24, 309);
             label8.Name = "label8";
             label8.Size = new Size(120, 15);
             label8.TabIndex = 22;
@@ -190,7 +192,7 @@
             cmbServicio.Enabled = false;
             cmbServicio.FormattingEnabled = true;
             cmbServicio.Items.AddRange(new object[] { "Sin Servicios Adicionales" });
-            cmbServicio.Location = new Point(150, 368);
+            cmbServicio.Location = new Point(150, 337);
             cmbServicio.Name = "cmbServicio";
             cmbServicio.Size = new Size(200, 23);
             cmbServicio.TabIndex = 23;
@@ -278,7 +280,7 @@
             // 
             rbServicioNo.AutoSize = true;
             rbServicioNo.Checked = true;
-            rbServicioNo.Location = new Point(263, 338);
+            rbServicioNo.Location = new Point(263, 307);
             rbServicioNo.Name = "rbServicioNo";
             rbServicioNo.Size = new Size(41, 19);
             rbServicioNo.TabIndex = 33;
@@ -290,7 +292,7 @@
             // rbServicioSI
             // 
             rbServicioSI.AutoSize = true;
-            rbServicioSI.Location = new Point(150, 338);
+            rbServicioSI.Location = new Point(150, 307);
             rbServicioSI.Name = "rbServicioSI";
             rbServicioSI.Size = new Size(34, 19);
             rbServicioSI.TabIndex = 32;
@@ -316,11 +318,29 @@
             grbMantenimiento.TabStop = false;
             grbMantenimiento.Text = "Mantenimiento";
             // 
+            // txtValorReparacion
+            // 
+            txtValorReparacion.Location = new Point(150, 366);
+            txtValorReparacion.Name = "txtValorReparacion";
+            txtValorReparacion.Size = new Size(200, 23);
+            txtValorReparacion.TabIndex = 36;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(52, 369);
+            label12.Name = "label12";
+            label12.Size = new Size(95, 15);
+            label12.TabIndex = 35;
+            label12.Text = "Valor reparacion:";
+            // 
             // frmIngresoMantenimiento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(395, 583);
+            Controls.Add(txtValorReparacion);
+            Controls.Add(label12);
             Controls.Add(grbMantenimiento);
             Controls.Add(rbServicioNo);
             Controls.Add(rbServicioSI);
@@ -377,5 +397,7 @@
         private RadioButton rbServicioNo;
         private RadioButton rbServicioSI;
         private GroupBox grbMantenimiento;
+        private TextBox txtValorReparacion;
+        private Label label12;
     }
 }

@@ -38,4 +38,9 @@
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="dsPrincipal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
 </Project>

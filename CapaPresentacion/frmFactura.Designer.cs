@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmFactura";
+            dgvFactura = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvFactura).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvFactura
+            // 
+            dgvFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFactura.Location = new Point(36, 109);
+            dgvFactura.Name = "dgvFactura";
+            dgvFactura.RowTemplate.Height = 25;
+            dgvFactura.Size = new Size(656, 310);
+            dgvFactura.TabIndex = 0;
+            // 
+            // frmFactura
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(718, 583);
+            Controls.Add(dgvFactura);
+            Name = "frmFactura";
+            Text = "Factura";
+            ((System.ComponentModel.ISupportInitialize)dgvFactura).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvFactura;
     }
 }
